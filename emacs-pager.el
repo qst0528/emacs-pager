@@ -44,7 +44,6 @@
 (defun emacs-pager-kill-pager ()
   "Kill pager buffer immediately"
   (interactive)
-  (set-buffer-modified-p nil)
   (server-edit))
 
 ;;;###autoload
@@ -57,6 +56,7 @@
                                 (point)))
 
   (rename-buffer "*pager*" t)
+  (set-buffer-modified-p nil)
   (read-only-mode))
 
 (provide 'emacs-pager)
