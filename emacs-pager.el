@@ -29,22 +29,14 @@
 
 (require 'server)
 
-(defvar emacs-pager-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "q") 'emacs-pager-kill-pager)
-
-    map)
-  "Keymap for emacs pager mode.")
+(defvar-keymap emacs-pager-mode-map
+  :doc "Keymap for emacs pager mode."
+  "q" #'server-edit)
 
 (defcustom emacs-pager-max-line-coloring 500
   "Maximum number of lines to ansi-color. If performance is bad when
    loading data, reduce this number"
   :group 'emacs-pager)
-
-(defun emacs-pager-kill-pager ()
-  "Kill pager buffer immediately"
-  (interactive)
-  (server-edit))
 
 ;;;###autoload
 (define-derived-mode emacs-pager-mode fundamental-mode "Pager"
