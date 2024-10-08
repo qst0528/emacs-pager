@@ -28,8 +28,10 @@
 ;;; Code:
 
 (require 'server)
+(require 'view)
 
 (defvar-keymap emacs-pager-mode-map
+  :parent view-mode-map
   :doc "Keymap for emacs pager mode."
   "q" #'server-edit)
 
