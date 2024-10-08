@@ -27,6 +27,8 @@
 
 ;;; Code:
 
+(require 'server)
+
 (defvar emacs-pager-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "q") 'emacs-pager-kill-pager)
@@ -54,7 +56,7 @@
                                 (forward-line emacs-pager-max-line-coloring)
                                 (point)))
 
-  (setq buffer-name "*pager*")
+  (rename-buffer "*pager*" t)
   (read-only-mode))
 
 (provide 'emacs-pager)
