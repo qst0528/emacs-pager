@@ -41,7 +41,7 @@
   :group 'emacs-pager)
 
 ;;;###autoload
-(define-derived-mode emacs-pager-mode fundamental-mode "Pager"
+(define-derived-mode emacs-pager-mode text-mode "Pager"
   "Mode for viewing data paged by emacs-pager"
   (setq-local make-backup-files nil)
   (ansi-color-apply-on-region (goto-char (point-min))
