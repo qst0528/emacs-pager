@@ -1,0 +1,8 @@
+#!/bin/sh
+tmpfile=$(mktemp --tmpdir XXXXXX.emacs-pager)
+cat > ${tmpfile}
+
+echo 'reading into emacs...'
+emacsclient ${tmpfile}
+
+rm ${tmpfile}
